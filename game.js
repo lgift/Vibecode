@@ -985,7 +985,7 @@ function startGameLoops() {
     
     // Gambling urge increase loop - every 3 seconds
     gamblingUrgeInterval = setInterval(() => {
-        gameState.gamblingUrge += 1 + Math.random() * 2;
+        gameState.gamblingUrge += 1 + Math.random() * 18;
         if (gameState.gamblingUrge > 100) gameState.gamblingUrge = 100; // Cap at 100%
         updateGamblingDisplay();
     }, 3000);
