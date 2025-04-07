@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <!-- Button base -->
+  <rect x="5" y="5" width="190" height="70" rx="15" ry="15" fill="#003366" stroke="#002244" stroke-width="5"/>
+  
+  <!-- Button face -->
+  <rect x="10" y="10" width="180" height="60" rx="12" ry="12" fill="#004488" stroke="#003366" stroke-width="2"/>
+  
+  <!-- Button gradient -->
+  <rect x="15" y="15" width="170" height="50" rx="10" ry="10" fill="#0055aa"/>
+  
+  <!-- Camera icon -->
+  <rect x="30" y="25" width="30" height="25" rx="2" ry="2" fill="#00294f"/>
+  <polygon points="60,25 70,35 60,35" fill="#00294f"/>
+  <circle cx="45" cy="35" r="8" fill="#001f3f"/>
+  <circle cx="45" cy="35" r="4" fill="#001122"/>
+  
+  <!-- Text -->
+  <text x="125" y="45" font-family="Arial" font-size="22" font-weight="bold" fill="white" text-anchor="middle">CAMERA</text>
+</svg>

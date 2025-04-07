@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1000" height="600" fill="#050505"/>
+  
+  <!-- Small cramped room -->
+  <rect x="150" y="50" width="700" height="500" fill="#0a0a0a"/>
+  
+  <!-- Floor -->
+  <rect x="150" y="450" width="700" height="100" fill="#080808"/>
+  
+  <!-- Floor details -->
+  <line x1="150" y1="475" x2="850" y2="475" stroke="#040404" stroke-width="2"/>
+  <line x1="150" y1="500" x2="850" y2="500" stroke="#040404" stroke-width="2"/>
+  <line x1="150" y1="525" x2="850" y2="525" stroke="#040404" stroke-width="2"/>
+  
+  <line x1="200" y1="450" x2="200" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="300" y1="450" x2="300" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="400" y1="450" x2="400" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="500" y1="450" x2="500" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="600" y1="450" x2="600" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="700" y1="450" x2="700" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="800" y1="450" x2="800" y2="550" stroke="#040404" stroke-width="2"/>
+  
+  <!-- Left wall shelves -->
+  <rect x="175" y="100" width="125" height="20" fill="#151515"/>
+  <rect x="175" y="120" width="10" height="330" fill="#101010"/>
+  <rect x="290" y="120" width="10" height="330" fill="#101010"/>
+  
+  <rect x="175" y="150" width="125" height="10" fill="#101010"/>
+  <rect x="175" y="200" width="125" height="10" fill="#101010"/>
+  <rect x="175" y="250" width="125" height="10" fill="#101010"/>
+  <rect x="175" y="300" width="125" height="10" fill="#101010"/>
+  <rect x="175" y="350" width="125" height="10" fill="#101010"/>
+  <rect x="175" y="400" width="125" height="10" fill="#101010"/>
+  
+  <!-- Items on left shelves -->
+  <rect x="185" y="125" width="30" height="25" fill="#202020"/>
+  <rect x="225" y="125" width="25" height="30" fill="#202030"/>
+  <rect x="260" y="130" width="20" height="20" fill="#203020"/>
+  
+  <rect x="190" y="160" width="15" height="40" fill="#302020"/>
+  <rect x="210" y="160" width="45" height="20" fill="#202030"/>
+  <rect x="265" y="175" width="15" height="25" fill="#302030"/>
+  
+  <rect x="185" y="210" width="40" height="15" fill="#203030"/>
+  <rect x="240" y="210" width="30" height="25" fill="#303020"/>
+  
+  <rect x="195" y="260" width="20" height="40" fill="#252520"/>
+  <rect x="230" y="260" width="55" height="25" fill="#202525"/>
+  
+  <rect x="185" y="310" width="35" height="30" fill="#201525"/>
+  <rect x="240" y="320" width="40" height="25" fill="#152025"/>
+  
+  <rect x="195" y="360" width="25" height="40" fill="#152520"/>
+  <rect x="240" y="370" width="40" height="30" fill="#251520"/>
+  
+  <rect x="180" y="410" width="50" height="15" fill="#222222"/>
+  <rect x="240" y="410" width="35" height="25" fill="#222222"/>
+  
+  <!-- Right wall shelves -->
+  <rect x="700" y="100" width="125" height="20" fill="#151515"/>
+  <rect x="700" y="120" width="10" height="330" fill="#101010"/>
+  <rect x="815" y="120" width="10" height="330" fill="#101010"/>
+  
+  <rect x="700" y="150" width="125" height="10" fill="#101010"/>
+  <rect x="700" y="200" width="125" height="10" fill="#101010"/>
+  <rect x="700" y="250" width="125" height="10" fill="#101010"/>
+  <rect x="700" y="300" width="125" height="10" fill="#101010"/>
+  <rect x="700" y="350" width="125" height="10" fill="#101010"/>
+  <rect x="700" y="400" width="125" height="10" fill="#101010"/>
+  
+  <!-- Items on right shelves -->
+  <rect x="710" y="125" width="35" height="25" fill="#202020"/>
+  <rect x="755" y="125" width="30" height="25" fill="#252527"/>
+  <rect x="795" y="130" width="15" height="20" fill="#252025"/>
+  
+  <rect x="715" y="160" width="20" height="40" fill="#322233"/>
+  <rect x="750" y="165" width="45" height="25" fill="#332222"/>
+  <rect x="805" y="170" width="15" height="20" fill="#223322"/>
+  
+  <rect x="710" y="210" width="30" height="15" fill="#223322"/>
+  <rect x="755" y="210" width="50" height="30" fill="#222233"/>
+  
+  <rect x="725" y="260" width="25" height="40" fill="#333322"/>
+  <rect x="765" y="270" width="45" height="25" fill="#223333"/>
+  
+  <rect x="710" y="310" width="40" height="30" fill="#332233"/>
+  <rect x="765" y="315" width="40" height="25" fill="#332222"/>
+  
+  <rect x="720" y="360" width="25" height="40" fill="#223322"/>
+  <rect x="760" y="375" width="50" height="25" fill="#332233"/>
+  
+  <rect x="705" y="410" width="40" height="20" fill="#222222"/>
+  <rect x="755" y="410" width="55" height="25" fill="#1f1f1f"/>
+  
+  <!-- Cleaning supplies in center -->
+  <rect x="400" y="300" width="10" height="150" fill="#333333"/>
+  <rect x="390" y="250" width="30" height="50" fill="#222222"/>
+  <ellipse cx="405" cy="240" rx="15" ry="10" fill="#444444"/>
+  
+  <rect x="450" y="350" width="30" height="100" fill="#222233"/>
+  <rect x="455" y="330" width="20" height="20" fill="#22223f"/>
+  
+  <rect x="520" y="380" width="50" height="70" fill="#223322"/>
+  <rect x="530" y="360" width="30" height="20" fill="#223f22"/>
+  
+  <polygon points="600,450 620,350 640,450" fill="#111111"/>
+  
+  <!-- Light fixture on ceiling -->
+  <rect x="450" y="60" width="100" height="15" fill="#111111"/>
+  <rect x="460" y="75" width="80" height="5" fill="#222222"/>
+  <rect x="475" y="80" width="50" height="5" fill="#333333"/>
+  
+  <!-- Empty spots for CAT PNGs to be overlaid -->
+  <rect x="400" y="280" width="50" height="50" fill="none" stroke="#00ff00" stroke-width="1" stroke-opacity="0.1" id="cat1-position"/>
+  <rect x="550" y="280" width="50" height="50" fill="none" stroke="#00ff00" stroke-width="1" stroke-opacity="0.1" id="cat2-position"/>
+  
+  <!-- Camera UI elements -->
+  <rect x="0" y="0" width="1000" height="30" fill="#000000" opacity="0.7"/>
+  <rect x="10" y="5" width="120" height="20" fill="#111111"/>
+  <text x="70" y="20" font-family="monospace" font-size="14" fill="#00ff00" text-anchor="middle">CAM 03</text>
+  
+  <rect x="350" y="5" width="300" height="20" fill="#111111"/>
+  <text x="500" y="20" font-family="monospace" font-size="12" fill="#00ff00" text-anchor="middle">SUPPLY CLOSET</text>
+  
+  <rect x="0" y="570" width="1000" height="30" fill="#000000" opacity="0.7"/>
+  <rect x="800" y="575" width="190" height="20" fill="#111111"/>
+  
+  <!-- Camera effect overlay -->
+  <rect x="0" y="0" width="1000" height="600" fill="none" stroke="#ffffff" stroke-width="4" stroke-opacity="0.05"/>
+  <line x1="0" y1="0" x2="1000" y2="600" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+  <line x1="1000" y1="0" x2="0" y2="600" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+  
+  <!-- Scan lines -->
+  <g opacity="0.05">
+    <line x1="0" y1="4" x2="1000" y2="4" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="12" x2="1000" y2="12" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="20" x2="1000" y2="20" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="28" x2="1000" y2="28" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="36" x2="1000" y2="36" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="44" x2="1000" y2="44" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="52" x2="1000" y2="52" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="60" x2="1000" y2="60" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="68" x2="1000" y2="68" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="76" x2="1000" y2="76" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="84" x2="1000" y2="84" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="92" x2="1000" y2="92" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1000" y2="100" stroke="#ffffff" stroke-width="1"/>
+    <!-- ... repeating pattern for the entire height ... -->
+  </g>
+</svg>

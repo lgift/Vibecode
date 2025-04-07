@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1000" height="600" fill="#080808"/>
+  
+  <!-- Floor -->
+  <polygon points="250,250 750,250 850,600 150,600" fill="#0c0c0c"/>
+  
+  <!-- Floor grid lines -->
+  <line x1="250" y1="250" x2="150" y2="600" stroke="#060606" stroke-width="2"/>
+  <line x1="750" y1="250" x2="850" y2="600" stroke="#060606" stroke-width="2"/>
+  <line x1="375" y1="250" x2="300" y2="600" stroke="#060606" stroke-width="2"/>
+  <line x1="500" y1="250" x2="500" y2="600" stroke="#060606" stroke-width="2"/>
+  <line x1="625" y1="250" x2="700" y2="600" stroke="#060606" stroke-width="2"/>
+  
+  <!-- Horizontal floor lines -->
+  <line x1="150" y1="300" x2="850" y2="300" stroke="#060606" stroke-width="2"/>
+  <line x1="150" y1="350" x2="850" y2="350" stroke="#060606" stroke-width="2"/>
+  <line x1="150" y1="400" x2="850" y2="400" stroke="#060606" stroke-width="2"/>
+  <line x1="150" y1="450" x2="850" y2="450" stroke="#060606" stroke-width="2"/>
+  <line x1="150" y1="500" x2="850" y2="500" stroke="#060606" stroke-width="2"/>
+  <line x1="150" y1="550" x2="850" y2="550" stroke="#060606" stroke-width="2"/>
+  
+  <!-- Walls -->
+  <rect x="250" y="0" width="500" height="250" fill="#111111"/>
+  <rect x="0" y="0" width="250" height="250" fill="#0c0c0c"/>
+  <rect x="750" y="0" width="250" height="250" fill="#0c0c0c"/>
+  
+  <!-- Wall details -->
+  <rect x="300" y="50" width="400" height="50" fill="#0e0e0e"/>
+  <rect x="350" y="150" width="300" height="80" fill="#0a0a0a"/>
+  
+  <!-- Door at end of hall -->
+  <rect x="450" y="100" width="100" height="150" fill="#060606"/>
+  <rect x="455" y="105" width="90" height="140" fill="#0a0a0a"/>
+  <circle cx="530" cy="175" r="5" fill="#222222"/>
+  
+  <!-- Exit sign -->
+  <rect x="465" y="65" width="70" height="25" fill="#220000"/>
+  <text x="500" y="85" font-family="Arial" font-size="18" fill="#ff0000" text-anchor="middle">EXIT</text>
+  
+  <!-- Wall decorations -->
+  <rect x="100" y="50" width="100" height="150" fill="#0e0e0e"/>
+  <rect x="800" y="50" width="100" height="150" fill="#0e0e0e"/>
+  
+  <!-- Light fixtures -->
+  <rect x="350" y="10" width="60" height="20" fill="#111111"/>
+  <rect x="590" y="10" width="60" height="20" fill="#111111"/>
+  
+  <!-- Camera UI elements -->
+  <rect x="0" y="0" width="1000" height="30" fill="#000000" opacity="0.7"/>
+  <rect x="10" y="5" width="120" height="20" fill="#111111"/>
+  <text x="70" y="20" font-family="monospace" font-size="14" fill="#00ff00" text-anchor="middle">CAM 01</text>
+  
+  <rect x="350" y="5" width="300" height="20" fill="#111111"/>
+  <text x="500" y="20" font-family="monospace" font-size="12" fill="#00ff00" text-anchor="middle">HALLWAY</text>
+  
+  <rect x="0" y="570" width="1000" height="30" fill="#000000" opacity="0.7"/>
+  <rect x="800" y="575" width="190" height="20" fill="#111111"/>
+  
+  <!-- Empty spot for CAT PNG to be overlaid -->
+  <rect x="475" y="300" width="50" height="50" fill="none" stroke="#00ff00" stroke-width="1" stroke-opacity="0.1" id="cat1-position"/>
+  
+  <!-- Camera effect overlay -->
+  <rect x="0" y="0" width="1000" height="600" fill="none" stroke="#ffffff" stroke-width="4" stroke-opacity="0.05"/>
+  <line x1="0" y1="0" x2="1000" y2="600" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+  <line x1="1000" y1="0" x2="0" y2="600" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+  
+  <!-- Scan lines -->
+  <g opacity="0.05">
+    <line x1="0" y1="4" x2="1000" y2="4" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="12" x2="1000" y2="12" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="20" x2="1000" y2="20" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="28" x2="1000" y2="28" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="36" x2="1000" y2="36" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="44" x2="1000" y2="44" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="52" x2="1000" y2="52" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="60" x2="1000" y2="60" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="68" x2="1000" y2="68" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="76" x2="1000" y2="76" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="84" x2="1000" y2="84" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="92" x2="1000" y2="92" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1000" y2="100" stroke="#ffffff" stroke-width="1"/>
+    <!-- ... repeating pattern for the entire height ... -->
+  </g>
+</svg>

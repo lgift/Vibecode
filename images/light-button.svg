@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Button housing -->
+  <circle cx="50" cy="50" r="48" fill="#222222" stroke="#111111" stroke-width="4"/>
+  
+  <!-- Button face -->
+  <circle cx="50" cy="50" r="40" fill="#444400" stroke="#333300" stroke-width="2"/>
+  <circle cx="50" cy="50" r="35" fill="#555500"/>
+  
+  <!-- Button highlight -->
+  <circle cx="40" cy="40" r="10" fill="#ffffff" opacity="0.2"/>
+  
+  <!-- Button text -->
+  <text x="50" y="55" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">LIGHT</text>
+</svg>

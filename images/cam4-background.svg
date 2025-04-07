@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <!-- Dark background -->
+  <rect x="0" y="0" width="1000" height="600" fill="#050505"/>
+  
+  <!-- Room layout -->
+  <rect x="100" y="50" width="800" height="500" fill="#0a0a0a"/>
+  
+  <!-- Floor -->
+  <rect x="100" y="450" width="800" height="100" fill="#080808"/>
+  
+  <!-- Floor details -->
+  <line x1="100" y1="475" x2="900" y2="475" stroke="#040404" stroke-width="2"/>
+  <line x1="100" y1="500" x2="900" y2="500" stroke="#040404" stroke-width="2"/>
+  <line x1="100" y1="525" x2="900" y2="525" stroke="#040404" stroke-width="2"/>
+  
+  <line x1="150" y1="450" x2="150" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="200" y1="450" x2="200" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="250" y1="450" x2="250" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="300" y1="450" x2="300" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="350" y1="450" x2="350" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="400" y1="450" x2="400" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="450" y1="450" x2="450" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="500" y1="450" x2="500" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="550" y1="450" x2="550" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="600" y1="450" x2="600" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="650" y1="450" x2="650" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="700" y1="450" x2="700" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="750" y1="450" x2="750" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="800" y1="450" x2="800" y2="550" stroke="#040404" stroke-width="2"/>
+  <line x1="850" y1="450" x2="850" y2="550" stroke="#040404" stroke-width="2"/>
+  
+  <!-- Slot machines against left wall -->
+  <rect x="150" y="150" width="80" height="250" fill="#220022"/>
+  <rect x="160" y="160" width="60" height="120" fill="#330033"/>
+  <rect x="165" y="165" width="50" height="110" fill="#110011"/>
+  
+  <rect x="160" y="290" width="60" height="40" fill="#440044"/>
+  <rect x="170" y="300" width="40" height="20" fill="#550055"/>
+  
+  <rect x="160" y="340" width="60" height="40" fill="#330033"/>
+  <rect x="175" y="350" width="30" height="20" fill="#660066"/>
+  
+  <rect x="280" y="150" width="80" height="250" fill="#220022"/>
+  <rect x="290" y="160" width="60" height="120" fill="#330033"/>
+  <rect x="295" y="165" width="50" height="110" fill="#110011"/>
+  
+  <rect x="290" y="290" width="60" height="40" fill="#440044"/>
+  <rect x="300" y="300" width="40" height="20" fill="#550055"/>
+  
+  <rect x="290" y="340" width="60" height="40" fill="#330033"/>
+  <rect x="305" y="350" width="30" height="20" fill="#660066"/>
+  
+  <!-- Gambling machines on right wall -->
+  <rect x="650" y="150" width="80" height="250" fill="#002222"/>
+  <rect x="660" y="160" width="60" height="120" fill="#003333"/>
+  <rect x="665" y="165" width="50" height="110" fill="#001111"/>
+  
+  <rect x="660" y="290" width="60" height="40" fill="#004444"/>
+  <rect x="670" y="300" width="40" height="20" fill="#005555"/>
+  
+  <rect x="660" y="340" width="60" height="40" fill="#003333"/>
+  <rect x="675" y="350" width="30" height="20" fill="#006666"/>
+  
+  <rect x="780" y="150" width="80" height="250" fill="#002222"/>
+  <rect x="790" y="160" width="60" height="120" fill="#003333"/>
+  <rect x="795" y="165" width="50" height="110" fill="#001111"/>
+  
+  <rect x="790" y="290" width="60" height="40" fill="#004444"/>
+  <rect x="800" y="300" width="40" height="20" fill="#005555"/>
+  
+  <rect x="790" y="340" width="60" height="40" fill="#003333"/>
+  <rect x="805" y="350" width="30" height="20" fill="#006666"/>
+  
+  <!-- Poker table in center -->
+  <ellipse cx="500" cy="300" rx="120" ry="80" fill="#004400"/>
+  <ellipse cx="500" cy="300" rx="100" ry="65" fill="#005500"/>
+  
+  <!-- Cards on table -->
+  <rect x="460" y="280" width="20" height="30" fill="#ffffff"/>
+  <rect x="462" y="282" width="16" height="26" fill="#cc0000"/>
+  
+  <rect x="490" y="280" width="20" height="30" fill="#ffffff"/>
+  <rect x="492" y="282" width="16" height="26" fill="#000000"/>
+  
+  <rect x="520" y="280" width="20" height="30" fill="#ffffff"/>
+  <rect x="522" y="282" width="16" height="26" fill="#cc0000"/>
+  
+  <!-- Poker chips -->
+  <circle cx="470" cy="250" r="10" fill="#ff0000"/>
+  <circle cx="490" cy="250" r="10" fill="#0000ff"/>
+  <circle cx="510" cy="250" r="10" fill="#ffffff"/>
+  <circle cx="530" cy="250" r="10" fill="#000000"/>
+  
+  <!-- Roulette wheel in background -->
+  <circle cx="400" cy="170" r="60" fill="#220000"/>
+  <circle cx="400" cy="170" r="55" fill="#330000"/>
+  <circle cx="400" cy="170" r="50" fill="#440000"/>
+  <circle cx="400" cy="170" r="45" fill="#550000"/>
+  <circle cx="400" cy="170" r="10" fill="#333333"/>
+  
+  <!-- Roulette wheel divisions -->
+  <line x1="345" y1="170" x2="455" y2="170" stroke="#ffffff" stroke-width="1"/>
+  <line x1="400" y1="115" x2="400" y2="225" stroke="#ffffff" stroke-width="1"/>
+  <line x1="358" y1="128" x2="442" y2="212" stroke="#ffffff" stroke-width="1"/>
+  <line x1="358" y1="212" x2="442" y2="128" stroke="#ffffff" stroke-width="1"/>
+  
+  <!-- Roulette wheel numbers (simplified) -->
+  <circle cx="400" cy="125" r="5" fill="#00ff00"/>
+  <circle cx="450" cy="170" r="5" fill="#000000"/>
+  <circle cx="400" cy="215" r="5" fill="#ff0000"/>
+  <circle cx="350" cy="170" r="5" fill="#000000"/>
+  
+  <!-- Neon signs -->
+  <rect x="150" y="100" width="80" height="30" fill="#220022"/>
+  <text x="190" y="120" font-family="monospace" font-size="16" fill="#ff00ff" text-anchor="middle">SLOTS</text>
+  
+  <rect x="470" y="120" width="60" height="30" fill="#002200"/>
+  <text x="500" y="140" font-family="monospace" font-size="14" fill="#00ff00" text-anchor="middle">POKER</text>
+  
+  <rect x="770" y="100" width="80" height="30" fill="#002222"/>
+  <text x="810" y="120" font-family="monospace" font-size="16" fill="#00ffff" text-anchor="middle">GAMES</text>
+  
+  <!-- Empty spot for CAT PNG to be overlaid -->
+  <rect x="500" y="230" width="50" height="50" fill="none" stroke="#00ff00" stroke-width="1" stroke-opacity="0.1" id="cat2-position"/>
+  
+  <!-- Camera UI elements -->
+  <rect x="0" y="0" width="1000" height="30" fill="#000000" opacity="0.7"/>
+  <rect x="10" y="5" width="120" height="20" fill="#111111"/>
+  <text x="70" y="20" font-family="monospace" font-size="14" fill="#00ff00" text-anchor="middle">CAM 04</text>
+  
+  <rect x="350" y="5" width="300" height="20" fill="#111111"/>
+  <text x="500" y="20" font-family="monospace" font-size="12" fill="#00ff00" text-anchor="middle">GAMING CORNER</text>
+  
+  <rect x="0" y="570" width="1000" height="30" fill="#000000" opacity="0.7"/>
+  <rect x="800" y="575" width="190" height="20" fill="#111111"/>
+  
+  <!-- Camera effect overlay -->
+  <rect x="0" y="0" width="1000" height="600" fill="none" stroke="#ffffff" stroke-width="4" stroke-opacity="0.05"/>
+  <line x1="0" y1="0" x2="1000" y2="600" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+  <line x1="1000" y1="0" x2="0" y2="600" stroke="#ffffff" stroke-width="1" stroke-opacity="0.02"/>
+  
+  <!-- Scan lines -->
+  <g opacity="0.05">
+    <line x1="0" y1="4" x2="1000" y2="4" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="12" x2="1000" y2="12" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="20" x2="1000" y2="20" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="28" x2="1000" y2="28" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="36" x2="1000" y2="36" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="44" x2="1000" y2="44" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="52" x2="1000" y2="52" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="60" x2="1000" y2="60" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="68" x2="1000" y2="68" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="76" x2="1000" y2="76" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="84" x2="1000" y2="84" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="92" x2="1000" y2="92" stroke="#ffffff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1000" y2="100" stroke="#ffffff" stroke-width="1"/>
+    <!-- ... repeating pattern for the entire height ... -->
+  </g>
+</svg>

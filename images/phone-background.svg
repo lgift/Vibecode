@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500">
+  <!-- Phone body -->
+  <rect x="0" y="0" width="300" height="500" rx="20" ry="20" fill="#111111" stroke="#000000" stroke-width="10"/>
+  
+  <!-- Phone screen -->
+  <rect x="15" y="40" width="270" height="420" fill="#000000" stroke="#222222" stroke-width="2"/>
+  
+  <!-- Phone header -->
+  <rect x="15" y="40" width="270" height="30" fill="#220022"/>
+  <text x="150" y="60" font-family="monospace" font-size="14" fill="#ffffff" text-anchor="middle">GAMBLING APP</text>
+  
+  <!-- Status bar icons -->
+  <rect x="20" y="45" width="40" height="15" rx="2" ry="2" fill="#333333"/>
+  <text x="40" y="56" font-family="monospace" font-size="8" fill="#ffffff" text-anchor="middle">12:00</text>
+  
+  <rect x="240" y="45" width="40" height="15" rx="2" ry="2" fill="#333333"/>
+  <rect x="242" y="48" width="28" height="9" fill="#00ff00"/>
+  <rect x="270" y="49" width="2" height="7" fill="#ffffff"/>
+  <text x="256" y="56" font-family="monospace" font-size="6" fill="#000000" text-anchor="middle">100%</text>
+  
+  <!-- App background - gambling themed with cards/dice pattern -->
+  <pattern id="gamble-pattern" patternUnits="userSpaceOnUse" width="40" height="40">
+    <rect width="40" height="40" fill="#220022"/>
+    <circle cx="10" cy="10" r="5" fill="#330033"/>
+    <rect x="25" y="5" width="10" height="15" fill="#330033"/>
+    <polygon points="10,25 5,35 15,35" fill="#330033"/>
+    <rect x="25" y="25" width="10" height="10" fill="#330033"/>
+  </pattern>
+  
+  <rect x="15" y="70" width="270" height="390" fill="url(#gamble-pattern)"/>
+  
+  <!-- Phone footer -->
+  <rect x="15" y="460" width="270" height="30" fill="#220022"/>
+  <circle cx="150" cy="475" r="15" fill="#330033" stroke="#440044" stroke-width="2"/>
+  <rect x="140" y="465" width="20" height="20" rx="3" ry="3" fill="none" stroke="#ffffff" stroke-width="1"/>
+  
+  <!-- Gambling options menu container -->
+  <rect x="30" y="85" width="240" height="360" rx="10" ry="10" fill="#000000" opacity="0.7"/>
+  
+  <!-- Scratch Ticket option -->
+  <rect x="45" y="100" width="210" height="80" rx="10" ry="10" fill="#440000" stroke="#660000" stroke-width="2"/>
+  <rect x="55" y="110" width="190" height="60" rx="5" ry="5" fill="#550000"/>
+  
+  <text x="150" y="140" font-family="monospace" font-size="18" fill="#ffffff" text-anchor="middle">SCRATCH TICKET</text>
+  <text x="150" y="160" font-family="monospace" font-size="14" fill="#ffcc00" text-anchor="middle">$5</text>
+  
+  <!-- Dice scratching pattern on ticket -->
+  <circle cx="70" cy="130" r="5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="85" cy="130" r="5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="70" cy="145" r="5" fill="#ffffff" opacity="0.3"/>
+  <circle cx="85" cy="145" r="5" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Horse Race option -->
+  <rect x="45" y="200" width="210" height="80" rx="10" ry="10" fill="#004400" stroke="#006600" stroke-width="2"/>
+  <rect x="55" y="210" width="190" height="60" rx="5" ry="5" fill="#005500"/>
+  
+  <text x="150" y="240" font-family="monospace" font-size="18" fill="#ffffff" text-anchor="middle">HORSE RACE</text>
+  <text x="150" y="260" font-family="monospace" font-size="14" fill="#ffcc00" text-anchor="middle">$10</text>
+  
+  <!-- Horse race track visual -->
+  <rect x="215" y="225" width="20" height="35" fill="#003300"/>
+  <rect x="217" y="225" width="2" height="35" fill="#ffffff"/>
+  <rect x="223" y="225" width="2" height="35" fill="#ffffff"/>
+  <rect x="230" y="230" width="8" height="5" fill="#ffcc00"/>
+  <rect x="230" y="240" width="8" height="5" fill="#ffcc00"/>
+  <rect x="230" y="250" width="8" height="5" fill="#ffcc00"/>
+  
+  <!-- Slots option -->
+  <rect x="45" y="300" width="210" height="80" rx="10" ry="10" fill="#000044" stroke="#000066" stroke-width="2"/>
+  <rect x="55" y="310" width="190" height="60" rx="5" ry="5" fill="#000055"/>
+  
+  <text x="150" y="340" font-family="monospace" font-size="18" fill="#ffffff" text-anchor="middle">SLOTS</text>
+  <text x="150" y="360" font-family="monospace" font-size="14" fill="#ffcc00" text-anchor="middle">$8</text>
+  
+  <!-- Slot machine visual -->
+  <rect x="70" y="325" width="15" height="25" fill="#000033" stroke="#ffffff" stroke-width="1"/>
+  <rect x="90" y="325" width="15" height="25" fill="#000033" stroke="#ffffff" stroke-width="1"/>
+  <rect x="110" y="325" width="15" height="25" fill="#000033" stroke="#ffffff" stroke-width="1"/>
+  <text x="77" y="343" font-family="monospace" font-size="14" fill="#ff0000" text-anchor="middle">7</text>
+  <text x="97" y="343" font-family="monospace" font-size="14" fill="#ffff00" text-anchor="middle">$</text>
+  <text x="117" y="343" font-family="monospace" font-size="14" fill="#00ffff" text-anchor="middle">7</text>
+  
+  <!-- Money display -->
+  <rect x="45" y="400" width="210" height="30" rx="5" ry="5" fill="#333333" stroke="#444444" stroke-width="2"/>
+  <text x="150" y="420" font-family="monospace" font-size="16" fill="#00ff00" text-anchor="middle">BALANCE: $100</text>

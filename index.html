@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Gambler's</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            cursor: visible; /* Keep this to hide default cursor */
+            background-color: #000;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        #custom-cursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('images/cursor.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none; /* So it doesn’t block clicks */
+            z-index: 9999; /* On top of everything */
+            transform: translate(-50%, -50%); /* Center it on the mouse */
+            display: block; /* Ensure it starts visible */
+        }
+        
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #office-view {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/office-background.svg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .door-button {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 10;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .door-button:hover {
+            opacity: 1;
+        }
+        
+        #left-door-btn {
+            left: 10%;
+            top: 40%;
+            background-image: url('images/door-button.svg');
+        }
+        
+        #left-door-btn.active {
+            background-image: url('images/door-button-active.svg');
+        }
+        
+        #right-door-btn {
+            right: 10%;
+            top: 40%;
+            background-image: url('images/door-button.svg');
+        }
+        
+        #right-door-btn.active {
+            background-image: url('images/door-button-active.svg');
+        }
+        
+        .light-button {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 10;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .light-button:hover {
+            opacity: 1;
+        }
+        
+        #left-light-btn {
+            left: 10%;
+            top: 50%;
+            background-image: url('images/light-button.svg');
+        }
+        
+        #left-light-btn.active {
+            background-image: url('images/light-button-active.svg');
+        }
+        
+        #right-light-btn {
+            right: 10%;
+            top: 50%;
+            background-image: url('images/light-button.svg');
+        }
+        
+        #right-light-btn.active {
+            background-image: url('images/light-button-active.svg');
+        }
+        
+        #left-door {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25%;
+            height: 100%;
+            background-image: url('images/left-door-closed.svg');
+            background-size: cover;
+            background-position: left center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 5;
+        }
+        
+        #right-door {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 25%;
+            height: 100%;
+            background-image: url('images/right-door-closed.svg');
+            background-size: cover;
+            background-position: right center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 5;
+        }
+        
+        #camera-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 60px;
+            background-image: url('images/camera-button.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        #camera-btn:hover {
+            opacity: 1;
+        }
+        
+        #camera-view {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: none;
+            z-index: 10;
+        }
+        
+        .camera {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: none;
+        }
+        
+        #cam1 {
+            background-image: url('images/cam1-background.svg');
+        }
+        
+        #cam2 {
+            background-image: url('images/cam2-background.svg');
+        }
+        
+        #cam3 {
+            background-image: url('images/cam3-background.svg');
+        }
+        
+        #cam4 {
+            background-image: url('images/cam4-background.svg');
+        }
+        
+        .cat {
+            position: absolute;
+            display: none;
+            z-index: 5;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        /* Universal cat positions in each view */
+        .cat-cam1 {
+            left: 40%;
+            top: 50%;
+            width: 20%;
+            height: 30%;
+        }
+        
+        .cat-cam2 {
+            left: 30%;
+            top: 40%;
+            width: 20%;
+            height: 30%;
+        }
+        
+        .cat-cam3 {
+            left: 50%;
+            top: 45%;
+            width: 20%;
+            height: 30%;
+        }
+        
+        .cat-cam4 {
+            right: 35%;
+            top: 50%;
+            width: 20%;
+            height: 30%;
+        }
+        
+        .cat-door-left {
+            position: absolute;
+            left: 5%;
+            top: 30%;
+            width: 20%;
+            height: 40%;
+        }
+        
+        .cat-door-right {
+            position: absolute;
+            right: 5%;
+            top: 30%;
+            width: 20%;
+            height: 40%;
+        }
+        
+        #camera-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            z-index: 11;
+        }
+        
+        .cam-btn {
+            width: 80px;
+            height: 40px;
+            background-color: #222;
+            color: #0f0;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid #444;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        
+        .cam-btn:hover {
+            background-color: #333;
+        }
+        
+        #exit-cam {
+            background-color: #400;
+            color: #fff;
+        }
+        
+        #exit-cam:hover {
+            background-color: #600;
+        }
+        
+        .cam-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 12;
+            background-image: url('images/camera-overlay.svg');
+            background-size: 100% 100%;
+        }
+        
+        .cam-static {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 11;
+            background-image: url('images/static-overlay.svg');
+            background-size: 100% 100%;
+        }
+        
+        .cam-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #0f0;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            z-index: 13;
+        }
+        
+        .cam-time {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #0f0;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            z-index: 13;
+        }
+        
+        #power-display {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            color: #0f0;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            z-index: 8;
+        }
+        
+        #power-usage {
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            color: #0f0;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            z-index: 8;
+        }
+        
+        #time-display {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #0f0;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            z-index: 8;
+        }
+        
+        #gambling-meter {
+            position: absolute;
+            left: 20px;
+            top: 80px;
+            color: #0f0;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            z-index: 8;
+        }
+        
+        #phone-btn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background-image: url('images/phone-button.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        #phone-btn:hover {
+            opacity: 1;
+        }
+        
+        #phone-view {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 500px;
+            background-image: url('images/phone-background.svg');
+            background-size: cover;
+            display: none;
+            z-index: 20;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+        
+        #gambling-menu {
+            position: relative;
+            padding: 60px 20px 20px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .gambling-option {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            transition: background-color 0.2s;
+            user-select: none;
+        }
+        
+        .gambling-option[data-option="scratch"] {
+            background-color: #550000;
+        }
+        
+        .gambling-option[data-option="horserace"] {
+            background-color: #005500;
+        }
+        
+        .gambling-option[data-option="slots"] {
+            background-color: #000055;
+        }
+        
+        .gambling-option:hover {
+            filter: brightness(1.2);
+        }
+        
+        #balance-display {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #0f0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        #scratch-ticket {
+            display: none;
+            position: relative;
+            height: 100%;
+            padding-top: 60px;
+            background-color: #330000;
+        }
+        
+        .scratch-area {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #774400;
+            border: 3px solid #553300;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: transparent; /* Hide text until scratched */
+            user-select: none;
+        }
+        
+        .scratch-area.scratched {
+            background-color: #332200;
+        }
+        
+        .scratch-area.win {
+            color: #ffff00;
+        }
+        
+        .scratch-area.lose {
+            color: #ff0000;
+        }
+        
+        #scratch-ticket .scratch-area:nth-child(1) { top: 100px; left: 40px; }
+        #scratch-ticket .scratch-area:nth-child(2) { top: 100px; left: 120px; }
+        #scratch-ticket .scratch-area:nth-child(3) { top: 100px; left: 200px; }
+        #scratch-ticket .scratch-area:nth-child(4) { top: 200px; left: 40px; }
+        #scratch-ticket .scratch-area:nth-child(5) { top: 200px; left: 120px; }
+        #scratch-ticket .scratch-area:nth-child(6) { top: 200px; left: 200px; }
+        #scratch-ticket .scratch-area:nth-child(7) { top: 300px; left: 40px; }
+        #scratch-ticket .scratch-area:nth-child(8) { top: 300px; left: 120px; }
+        #scratch-ticket .scratch-area:nth-child(9) { top: 300px; left: 200px; }
+        
+        #horse-race {
+            display: none;
+            position: relative;
+            height: 100%;
+            padding-top: 60px;
+            background-color: #003300;
+        }
+        
+        .track {
+            position: relative;
+            width: 250px;
+            height: 200px;
+            background-color: #004400;
+            margin: 100px auto 0;
+            border: 5px solid #002200;
+            overflow: hidden;
+        }
+        
+        .finish-line {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background-color: white;
+            z-index: 2;
+        }
+        
+        .horse {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: 70px; /* Starting position */
+            z-index: 1;
+            cursor: pointer;
+            transition: left 0.1s linear;
+        }
+        
+        .horse.selected {
+            filter: brightness(1.5);
+        }
+        
+        .horse.winner {
+            animation: winner-pulse 0.5s infinite alternate;
+        }
+        
+        @keyframes winner-pulse {
+            from { filter: brightness(1); }
+            to { filter: brightness(2); }
+        }
+        
+        #horse1 { top: 20px; background-color: #cc0000; }
+        #horse2 { top: 70px; background-color: #0000cc; }
+        #horse3 { top: 120px; background-color: #00cc00; }
+        #horse4 { top: 170px; background-color: #cccc00; }
+        
+        #slots-game {
+            display: none;
+            position: relative;
+            height: 100%;
+            padding-top: 60px;
+            background-color: #220033;
+            text-align: center;
+        }
+        
+        .slots-container {
+            width: 220px;
+            height: 120px;
+            background-color: #000;
+            margin: 80px auto 20px;
+            border: 5px solid #440066;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .slot-reel {
+            width: 60px;
+            height: 80px;
+            background-color: #110022;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            color: #fff;
+            border: 2px solid #330044;
+        }
+        
+        #spin-button {
+            width: 100px;
+            height: 50px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        #spin-button:hover:not(:disabled) {
+            background-color: #ff3333;
+        }
+        
+        #spin-button:disabled {
+            background-color: #880000;
+            cursor: not-allowed;
+        }
+        
+        #slots-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+            height: 20px;
+        }
+        
+        #custom-cursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('images/cursor.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+        
+        #game-over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        #game-over h1 {
+            font-size: 48px;
+            color: #ff0000;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        
+        #game-over p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        
+        #restart-btn {
+            padding: 15px 30px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        #restart-btn:hover {
+            background-color: #ff3333;
+        }
+        
+        #jumpscare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: none;
+            z-index: 101; /* Already set, but confirm it’s higher than game-over (100) */
+        }
+        
+        
+        @keyframes jumpscare-anim {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        
+        /* Special effects classes */
+        .flicker {
+            animation: flicker 0.2s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            from { filter: brightness(1); }
+            to { filter: brightness(0.3); }
+        }
+        
+        .power-outage {
+            filter: brightness(0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="office-view">
+            <!-- Office view elements -->
+            <div id="left-door"></div>
+            <div id="right-door"></div>
+            <div class="door-button" id="left-door-btn"></div>
+            <div class="door-button" id="right-door-btn"></div>
+            <div class="light-button" id="left-light-btn"></div>
+            <div class="light-button" id="right-light-btn"></div>
+            <div id="camera-btn"></div>
+            <div id="phone-btn"></div>
+            <div id="custom-cursor"></div>
+            
+            <!-- Cats at doors (initially hidden) -->
+            <div id="cat1-door-left" class="cat cat-door-left"></div>
+            <div id="cat2-door-right" class="cat cat-door-right"></div>
+            
+            <!-- Status displays -->
+            <div id="power-display">Power: 100%</div>
+            <div id="power-usage">■</div>
+            <div id="time-display">12 AM</div>
+            <div id="gambling-meter">Gambling Urge: 0%</div>
+        </div>
+        
+        <div id="camera-view">
+            <!-- Camera view elements -->
+            <div class="camera" id="cam1">
+                <div id="cat1-cam1" class="cat cat-cam1"></div>
+                <!-- Other cam1 elements -->
+            </div>
+            <div class="camera" id="cam2">
+                <div id="cat1-cam2" class="cat cat-cam2"></div>
+                <div id="cat2-cam2" class="cat cat-cam2"></div>
+                <!-- Other cam2 elements -->
+            </div>
+            <div class="camera" id="cam3">
+                <div id="cat1-cam3" class="cat cat-cam3"></div>
+                <div id="cat2-cam3" class="cat cat-cam3"></div>
+                <!-- Other cam3 elements -->
+            </div>
+            <div class="camera" id="cam4">
+                <div id="cat2-cam4" class="cat cat-cam4"></div>
+                <!-- Other cam4 elements -->
+            </div>
+            
+            <!-- Camera overlay effects -->
+            <div class="cam-static"></div>
+            <div class="cam-overlay"></div>
+            
+            <!-- Camera UI -->
+            <div id="camera-controls">
+                <div class="cam-btn" data-cam="cam1">CAM 1</div>
+                <div class="cam-btn" data-cam="cam2">CAM 2</div>
+                <div class="cam-btn" data-cam="cam3">CAM 3</div>
+                <div class="cam-btn" data-cam="cam4">CAM 4</div>
+                <div class="cam-btn" id="exit-cam">EXIT</div>
+            </div>
+            
+            <!-- Camera labels -->
+            <div class="cam-label" id="cam1-label">CAM 01 - HALLWAY</div>
+            <div class="cam-label" id="cam2-label">CAM 02 - PARTY ROOM</div>
+            <div class="cam-label" id="cam3-label">CAM 03 - SUPPLY CLOSET</div>
+            <div class="cam-label" id="cam4-label">CAM 04 - GAMING CORNER</div>
+            
+            <!-- Camera time -->
+            <div class="cam-time">12 AM</div>
+        </div>
+        
+        <div id="phone-view">
+            <!-- Phone gambling interface -->
+            <div id="gambling-menu">
+                <div class="gambling-option" data-option="scratch">SCRATCH TICKET ($5)</div>
+                <div class="gambling-option" data-option="horserace">HORSE RACE ($10)</div>
+                <div class="gambling-option" data-option="slots">SLOTS ($8)</div>
+                <div id="balance-display">BALANCE: $100</div>
+            </div>
+            
+            <div id="scratch-ticket">
+                <!-- Scratch ticket areas -->
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+                <div class="scratch-area" data-prize="0"></div>
+            </div>
+            
+            <div id="horse-race">
+                <div class="track">
+                    <div class="finish-line"></div>
+                    <div class="horse" id="horse1"></div>
+                    <div class="horse" id="horse2"></div>
+                    <div class="horse" id="horse3"></div>
+                    <div class="horse" id="horse4"></div>
+                </div>
+            </div>
+            
+            <div id="slots-game">
+                <div class="slots-container">
+                    <div class="slot-reel">?</div>
+                    <div class="slot-reel">?</div>
+                    <div class="slot-reel">?</div>
+                </div>
+                <button id="spin-button">SPIN</button>
+                <div id="slots-message"></div>
+            </div>
+        </div>
+        
+        <div id="custom-cursor"></div>
+        
+        <div id="game-over">
+            <h1 id="game-over-title">GAME OVER</h1>
+            <p id="game-over-reason"></p>
+            <button id="restart-btn">Play Again</button>
+        </div>
+        
+        <div id="jumpscare"></div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
